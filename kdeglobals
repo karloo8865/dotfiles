@@ -1,0 +1,27 @@
+[General]
+ColorScheme=Greymon
+Name=Greymon
+font=Adwaita Sans,10
+menuFont=Adwaita Sans,10
+toolBarFont=Adwaita Sans,10
+smallFont=Adwaita Sans,9
+fixed=JetBrains Mono,10
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=rgb
+
+[Icons]
+Theme=breeze
+
+[KDE]
+widgetStyle=Fusion
+SingleClick=false
+AnimationDurationFactor=1
+
+[WM]
+activeBackground=28,32,39
+activeForeground=210,211,206
+inactiveBackground=20,23,29
+inactiveForeground=156,158,158
+activeBlend=42,47,56
+inactiveBlend=28,32,39

@@ -1,0 +1,23 @@
+# Dotfiles repo — only portable configuration is tracked.
+
+# Secrets / authentication
+/gh/
+/github-copilot/
+/opencode/
+/session/
+/pulse/
+/dconf/
+/trashrc
+/baloofileinformationrc
+
+# Application / browser data
+/mozilla/
+/net.imput.helium/
+/coc/
+/nvim/
+/go/
+
+# Runtime state, caches, generated files
+/kitty/kitty/
+__pycache__/
+*.pyc

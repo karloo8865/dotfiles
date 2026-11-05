@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+    "spacing": 0,
+
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    "modules-left": [
+        "custom/logo",
+        "sway/workspaces",
+        "sway/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "sway/language",
+        "custom/browser",
+        "network",
+        "custom/power",
+        "tray"
+    ],
+
+    "custom/logo": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    "custom/browser": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "pavucontrol"
+    },
+
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": false
+    },
+
+    "sway/window": {
+        "max-length": 30,
+        "format": "{title}",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:L%A %H:%M}",
+        "interval": 1,
+        "tooltip": false
+    },
+
+	"sway/language": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "custom/voice": {
+    	"format": "",
+    	"tooltip": false,
+    	"on-click": "pavucontrol"
+	},
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮",
+        "on-click": "nm-connection-editor",
+        "tooltip": false
+    },
+
+    "tray": {
+    	"icon-size": 24,
+    	"spacing": 10
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false
+    }
+}

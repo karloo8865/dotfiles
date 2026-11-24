@@ -103,7 +103,8 @@ sudo pacman -S --needed \
   networkmanager network-manager-applet nwg-look \
   grim slurp brightnessctl playerctl \
   pipewire pipewire-pulse pipewire-alsa wireplumber libpulse \
-  ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-libertinus \
+  sound-theme-freedesktop \
+  adwaita-fonts ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-libertinus \
   breeze-icons papirus-icon-theme \
   python
 ```
@@ -118,8 +119,8 @@ What each group is for:
 | Network | `networkmanager`, `network-manager-applet` | `network` Waybar module and `nm-connection-editor` |
 | Theme tooling | `nwg-look` | GTK theme/icon/cursor selection |
 | Sway keybinds | `grim`, `slurp`, `brightnessctl`, `playerctl` | Screenshots, volume/brightness/media keys |
-| Audio | `pipewire`, `pipewire-pulse`, `pipewire-alsa`, `wireplumber`, `libpulse` | PipeWire stack and `pactl` |
-| Fonts & icons | `ttf-jetbrains-mono`, `ttf-jetbrains-mono-nerd`, `ttf-libertinus`, `breeze-icons`, `papirus-icon-theme` | Kitty, Zed, Waybar, Rofi and GTK icons |
+| Audio | `pipewire`, `pipewire-pulse`, `pipewire-alsa`, `wireplumber`, `libpulse`, `sound-theme-freedesktop` | PipeWire stack, `pactl` and GTK sound theme |
+| Fonts & icons | `adwaita-fonts`, `ttf-jetbrains-mono`, `ttf-jetbrains-mono-nerd`, `ttf-libertinus`, `breeze-icons`, `papirus-icon-theme` | GTK/Zed UI, Kitty, Waybar, Rofi and icons |
 | Scripts | `python` | `sway/floating-border.py` |
 
 ### AUR
@@ -168,7 +169,7 @@ re-run `./install.sh --copy` after pulling.
 | `zed/` | Zed editor settings, keymap, tasks and greymon theme |
 | `btop/`, `htop/` | System monitor configs |
 | `xsettingsd/`, `nwg-look/` | GTK theme export settings |
-| `kdeglobals`, `dolphinrc` | KDE/Qt config and colour integration |
+| `kdeglobals`, `dolphinrc`, `kde/` | KDE/Qt config, colour scheme and integration |
 | `lxqt/`, `autostart/` | Small desktop startup entries |
 | `index.theme`, `README.txt` | greymon GTK theme metadata and palette |
 
@@ -183,7 +184,9 @@ so GTK apps match kitty, waybar and the rest of the setup.
 
 `install.sh` copies these files to `~/.local/share/themes/greymon`, which is
 where [nwg-look](https://github.com/nwg-piotr/nwg-look) expects user themes.
-Pick **greymon** there. See `README.txt` for the palette.
+It also installs `kde/Greymon.colors` to `~/.local/share/color-schemes` so
+Dolphin and other Qt/KDE apps use the same palette. Pick **greymon** in
+nwg-look. See `README.txt` for the palette.
 
 ## Secrets
 

@@ -16,6 +16,8 @@ CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
 THEME_NAME="greymon"
 THEME_DIR="$DATA_HOME/themes/$THEME_NAME"
+KDE_SCHEME_SRC="$REPO_DIR/kde/Greymon.colors"
+KDE_SCHEME_DST="$DATA_HOME/color-schemes/Greymon.colors"
 BACKUP_ROOT="${DOTFILES_BACKUP_DIR:-$HOME/.dotfiles-backup}"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 
@@ -87,8 +89,10 @@ OFFICIAL_PKGS=(
     pipewire-alsa
     wireplumber
     libpulse
+    sound-theme-freedesktop
 
     # Fonts, icons, cursors
+    adwaita-fonts
     ttf-jetbrains-mono
     ttf-jetbrains-mono-nerd
     ttf-libertinus
@@ -253,6 +257,30 @@ install_theme() {
     cp -f -- "$REPO_DIR/index.theme" "$THEME_DIR/index.theme"
     cp -f -- "$REPO_DIR/gtk-3.0/gtk.css" "$THEME_DIR/gtk-3.0/gtk.css"
     cp -f -- "$REPO_DIR/gtk-4.0/gtk.css" "$THEME_DIR/gtk-4.0/gtk.css"
+}
+
+install_kde_scheme() {
+    if [[ ! -f "$KDE_SCHEME_SRC" ]]; then
+        warn "kde/Greymon.colors not found, skipping KDE colour scheme"
+        return 0
+    fi
+
+    if [[ -f "$KDE_SCHEME_DST" ]] && cmp -s -- "$KDE_SCHEME_SRC" "$KDE_SCHEME_DST"; then
+        log "KDE colour scheme already installed: $KDE_SCHEME_DST"
+        return 0
+    fi
+
+    log "Installing KDE colour scheme: $KDE_SCHEME_DST"
+    if (( DRY_RUN )); then
+        return 0
+    fi
+
+    if [[ -e "$KDE_SCHEME_DST" ]]; then
+        backup_existing "$KDE_SCHEME_DST" "color-schemes"
+    fi
+
+    mkdir -p -- "$(dirname -- "$KDE_SCHEME_DST")"
+    cp -f -- "$KDE_SCHEME_SRC" "$KDE_SCHEME_DST"
 }
 
 install_wallpaper() {
@@ -432,6 +460,7 @@ for entry in "${CONFIG_ENTRIES[@]}"; do
 done
 
 install_theme
+install_kde_scheme
 install_wallpaper
 
 cat <<EOF

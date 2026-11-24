@@ -11,3 +11,6 @@ if status is-interactive
     alias llm="eza -lbGd --icons=always --sort=modified"
     alias tree="eza --tree --icons=always"
 end
+
+# Added by Antigravity CLI installer
+set -gx PATH "$HOME/.local/bin" $PATH

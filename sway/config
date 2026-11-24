@@ -21,7 +21,10 @@ set $menu rofi -show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Downloads/ign_unsplash15.png fill
+# wallpaper.sh looks for ~/.local/share/wallpapers/dotfiles.*, then
+# ~/.config/sway/wallpaper.*, then ~/Downloads/ign_unsplash29.png and the
+# stock Sway background.
+exec ~/.config/sway/wallpaper.sh
 #
 # Example configuration:
 #

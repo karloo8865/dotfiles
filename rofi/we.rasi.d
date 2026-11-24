@@ -2,8 +2,8 @@ configuration{
     modes: "run,drun,window";
 		font: "Libertinus Mono 14";
     show-icons: true;
-    icon-theme: "Papirus-dark";
-    terminal: "alacritty";
+    icon-theme: "Papirus-Dark";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;

@@ -16,6 +16,14 @@
 /coc/
 /nvim/
 /go/
+/libreoffice/
+
+# Files written locally by the installed configs
+/fish/fish_variables
+/sway/wallpaper.png
+/sway/wallpaper.jpg
+/sway/wallpaper.jpeg
+/sway/wallpaper.webp
 
 # Runtime state, caches, generated files
 /kitty/kitty/

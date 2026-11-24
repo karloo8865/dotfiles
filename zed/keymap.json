@@ -2,7 +2,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "f5": ["task::Spawn", { "task_name": "Run Current Python File" }]
+      "f5": ["task::Spawn", { "task_name": "Run Current Python File" }],
+      "ctrl-alt-r": ["task::Spawn", { "task_name": "r/rust" }],
     }
   },
   {
@@ -11,5 +12,17 @@
       "j k": "vim::NormalBefore"
     }
   },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-alt-t": "task::Rerun"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "alt-t": "task::Rerun"
+    }
+  }
 ]
 

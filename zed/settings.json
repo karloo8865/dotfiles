@@ -109,8 +109,8 @@
 	"base_keymap": "VSCode",
 	"theme": {
 		"mode": "dark",
-		"light": "One Dark",
-		"dark": "One Dark",
+		"light": "Greymon",
+		"dark": "Greymon",
 	},
 	"ui_font_size": 16.0,
 	"buffer_font_size": 18.5,

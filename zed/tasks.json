@@ -6,4 +6,12 @@
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
   },
+  {
+    "label": "r/rust",
+    "command": "sh",
+    "args": ["-c", "clear; cargo run -q"],
+    "cwd": "$ZED_WORKTREE_ROOT/hello_rust",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": true
+  }
 ]

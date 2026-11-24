@@ -180,3 +180,13 @@ window#waybar.solo,
     padding-right: 2px;
     font-size: 16px;
 }
+
+#cava {
+  color: #89b4fa;
+  background-color: #1e1e2e;
+  padding: 0 10px;
+  margin: 0 4px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 14px;
+}

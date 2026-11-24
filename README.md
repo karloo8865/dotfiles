@@ -25,6 +25,23 @@ Additional credits:
 The repository ships with `install.sh`, which installs every config into
 `~/.config` and sets up the greymon GTK theme.
 
+### Prerequisites
+
+- Arch Linux (x86_64) with an internet connection.
+- `git` and `base-devel` (for building AUR packages).
+- An AUR helper such as `yay` or `paru` for `bibata-cursor-theme`.
+- A user with `sudo` rights; do **not** run the installer as root.
+
+If you do not have an AUR helper yet:
+
+```bash
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+(cd /tmp/yay && makepkg -si)
+```
+
+Then clone and install:
+
 ```bash
 git clone https://github.com/karloo8865/dotfiles.git ~/dotfiles
 cd ~/dotfiles
@@ -151,14 +168,15 @@ cd ~/dotfiles
 git pull
 ```
 
-With the default symlink mode no reinstall is needed. If you used `--copy`,
-re-run `./install.sh --copy` after pulling.
+With the default symlink mode, content changes are live after `git pull`. If a
+pull adds a new top-level config entry, re-run `./install.sh` once to link it.
+If you used `--copy`, re-run `./install.sh --copy` after pulling.
 
 ## Contents
 
 | Path | What it configures |
 | --- | --- |
-| `install.sh` | Arch Linux installer for all configs and the GTK theme |
+| `install.sh` | Arch Linux installer for all configs, the GTK theme and KDE colours |
 | `sway/` | Sway WM config, wallpaper helper, status script, floating-border helper |
 | `waybar/` | Waybar layout, styles and power-menu script |
 | `kitty/` | Kitty terminal, including the greymon theme |
